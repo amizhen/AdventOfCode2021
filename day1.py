@@ -16,7 +16,7 @@ def count_increase2(depths):
     for i in range(len(depths) - 3):
         a = depths[i] + depths[i + 1] + depths[i + 2]
         b = depths[i + 1] + depths[i + 2] + depths[i + 3]
-        if (a < b):
+        if a < b:
             count += 1
     return count
 
