@@ -26,39 +26,33 @@ def count_frequency(inputs, pos):
 
 
 def scrub(inputs, pos, bit):
-    out = []
-    for command in inputs:
-        if command[pos] == bit:
-            out.append(command)
-    return out
+    return [command for command in inputs if command[pos] == bit]
 
 
 def oxygen_rating(inputs):
     commands = inputs.copy()
-    for i in range(12):
+    i = 0
+    while len(commands) > 1:
         frequency = count_frequency(commands, i)
         if frequency >= len(commands) / 2:
             commands = scrub(commands, i, '1')
         else:
             commands = scrub(commands, i, '0')
-
-    return int(commands[0],2)
+        i += 1
+    return int(commands[0], 2)
 
 
 def carbon_rating(inputs):
     commands = inputs.copy()
-    for i in range(12):
-        if(len(commands)==1):
-            return int(commands[0],2)
+    i = 0
+    while len(commands) > 1:
         frequency = count_frequency(commands, i)
         if frequency >= len(commands) / 2:
             commands = scrub(commands, i, '0')
         else:
             commands = scrub(commands, i, '1')
-
+        i += 1
     return int(commands[0], 2)
-
-
 
 
 print(find_power(power))
