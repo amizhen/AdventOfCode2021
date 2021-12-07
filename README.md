@@ -1,0 +1,1 @@
+These are my solutions as well as inputs to the 2021 Advent of Code. I solved these problems in python. The shown solutions are slightly revised versions of what I used to get the answer, but the approach remains the same. Some especially sloppy solutions were re-written and say "improved."  
