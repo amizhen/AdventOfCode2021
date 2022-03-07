@@ -6,6 +6,12 @@ def read_file_int(file_name):
     with open(file_name, "r") as file:
         return [int(line) for line in file]
 
+
+def read_file_digits(file_name):
+    with open(file_name, "r") as file:
+        return [[int(digit) for digit in line if digit.isdigit()] for line in file]
+
+
 def make_number(string):
     numb = ""
     for i in string:
